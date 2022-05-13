@@ -4,8 +4,11 @@
 #include <string>
 
 
-class Book
+struct Book
 {
+    static unsigned gen;
+    unsigned libID;
+
     std::string author;
     std::string title;
     std::string path;
@@ -13,7 +16,8 @@ class Book
     unsigned rating;
     std::string ISBN;
 
-public:
+
+// public:
     Book(std::string author, std::string title, std::string path, std::string description, 
     unsigned rating, std::string ISBN);
     Book(const Book& other) = delete;
