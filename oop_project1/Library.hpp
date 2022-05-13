@@ -4,6 +4,7 @@
 #include <vector>
 #include "Book.hpp"
 
+//< Keeps the book in a vector and keeps the database up to date
 class Library
 {
 private:

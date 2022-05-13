@@ -7,9 +7,14 @@ Library::Library(std::string file_path)
 	{
 		throw std::logic_error("File problem occured");
 	}
+}
 
-	// file_size = file.tellg();
-	// file.seekg(0, std::ios_base::beg);
+Library::~Library()
+{
+	if (file.is_open())
+	{
+		file.close();
+	}
 }
 
 void Library::save(Book book)
