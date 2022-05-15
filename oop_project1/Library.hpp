@@ -5,16 +5,13 @@
 #include <algorithm>
 #include "Book.hpp"
 
-///Used to denote the desired sorting criterion
+///Used to denote the desired sorting or search criterion
 enum crit{author, title, rating, ISBN};
 
 //< Keeps books in a vector and keeps the database up to date
 class Library
 {
 private:
-    // std::fstream file;
-	// std::size_t file_size;
-	// bool file_open;
     std::string filePath;
 
     std::vector<Book> lib;
