@@ -14,7 +14,7 @@ TEST_CASE( "Add books to library", "[Library]" )
 
     SECTION("sort")
     {
-        lib.sort(rating, true);
+        lib.sort(rating, false);
         // lib.sort(author, false);
         // lib.sort(title, true);
         // REQUIRE()

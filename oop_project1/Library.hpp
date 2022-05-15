@@ -6,7 +6,7 @@
 #include "Book.hpp"
 
 ///Used to denote the desired sorting criterion
-enum sortingCrit{author, title, rating};
+enum sortingCrit{author, title, rating, ISBN};
 
 //< Keeps books in a vector and keeps the database up to date
 class Library
@@ -20,6 +20,7 @@ private:
     std::vector<Book> lib;
     void writeToFile();
     void printVector(bool ascending);
+    void printBookInfo(size_t pos, bool detailed);
 
 public:
 

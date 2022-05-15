@@ -65,16 +65,25 @@ void Library::printVector(bool ascending)
 	{
 		for(size_t i = 0; i < lib.size(); ++i)
 		{
-			std::cout<<"\""<<lib.at(i).title<<"\" "<<lib.at(i).author<<" "
-			<<lib.at(i).ISBN<<"\n";
+			printBookInfo(i, false);
 		}
 	}
 	else
 	{
 		for(size_t i =  lib.size(); i > 0; --i)
 		{
-			std::cout<<"\""<<lib.at(i-1).title<<"\" "<<lib.at(i-1).author<<" "
-			<<lib.at(i-1).ISBN<<"\n";
+			printBookInfo(i-1, false);
 		}
+	}
+}
+
+void Library::printBookInfo(size_t pos, bool detailed)
+{
+	std::cout<<"\""<<lib.at(pos).title<<"\" "<<lib.at(pos).author<<" "
+		<<lib.at(pos).ISBN<<"\n";
+	if(detailed)
+	{
+		std::cout<<"Rating: "<<lib.at(pos).rating<<"; Filepath: "<<lib.at(pos).path
+		<<";\nDescription: "<<lib.at(pos).description<<"\n\n";
 	}
 }
