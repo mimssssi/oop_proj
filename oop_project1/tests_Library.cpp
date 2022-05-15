@@ -12,9 +12,16 @@ TEST_CASE( "Add books to library", "[Library]" )
     lib.save(sec);
     lib.save(three);
 
-    SECTION("sort")
+    // SECTION("sort")
+    // {
+        // lib.sort(rating, false);
+        // lib.sort(author, false);
+        // lib.sort(title, true);
+        // REQUIRE()
+    // }
+    SECTION("search")
     {
-        lib.sort(rating, false);
+        lib.search(author, "2Ivan");
         // lib.sort(author, false);
         // lib.sort(title, true);
         // REQUIRE()

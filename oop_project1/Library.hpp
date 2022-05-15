@@ -6,7 +6,7 @@
 #include "Book.hpp"
 
 ///Used to denote the desired sorting criterion
-enum sortingCrit{author, title, rating, ISBN};
+enum crit{author, title, rating, ISBN};
 
 //< Keeps books in a vector and keeps the database up to date
 class Library
@@ -29,9 +29,12 @@ public:
    
     Library(std::string filePath);
     
-    void save(Book book);    ///saves book info to the vector and updates the file
+    ///saves book info to the vector and updates the file
+    void save(Book book);    
     //sorts the vector, containing the books, by the chosen criteria.
-    void sort(sortingCrit by, bool ascending);
+    void sort(crit by, bool ascending);
+
+    void search(crit by, std::string key);
 };
 
-//std::sort sorts the array using ...
+// std::sort sorts the array using ... 

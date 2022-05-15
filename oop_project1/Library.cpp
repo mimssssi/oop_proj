@@ -27,7 +27,7 @@ void Library::writeToFile()
 	file.close();
 }
 
-void Library::sort(sortingCrit by, bool ascending)
+void Library::sort(crit by, bool ascending)
 {
 	///sorts the vector in ascending order by author
 	
@@ -84,6 +84,43 @@ void Library::printBookInfo(size_t pos, bool detailed)
 	if(detailed)
 	{
 		std::cout<<"Rating: "<<lib.at(pos).rating<<"; Filepath: "<<lib.at(pos).path
-		<<";\nDescription: "<<lib.at(pos).description<<"\n\n";
+		<<";\nDescription: "<<lib.at(pos).description<<"\n";
+	}
+}
+
+void Library::search(crit by, std::string key)
+{
+	switch (by)
+	{
+	std::cout<<lib.size();
+		for(size_t i = 0; i < lib.size(); ++i)
+		{
+			if(lib.at(i).author == key)
+			{
+				printBookInfo(i, true);
+			}
+		}
+		break;
+	case title:
+		for(size_t i = 0; i < lib.size(); ++i)
+		{
+			if(lib.at(i).title == key)
+			{
+				printBookInfo(i, true);
+			}
+		}
+		break;
+	case ISBN:
+		for(size_t i = 0; i < lib.size(); ++i)
+		{
+			if(lib.at(i).ISBN == key)
+			{
+				printBookInfo(i, true);
+			}
+		}
+		break;
+	
+	default:
+		break;
 	}
 }
