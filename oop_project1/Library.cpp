@@ -157,3 +157,45 @@ size_t Library::size()
 {
 	return lib.size();
 }
+
+void Library::printBook(size_t pos, unsigned rowsOnPage)
+{
+	std::fstream file(lib.at(pos).path, std::ios::in);
+	if(!file.is_open())
+	{
+		throw std::logic_error("The file containing this book cannot be found.");
+	}
+	std::string curr; 
+	if(rowsOnPage)
+	{
+		std::string cont;
+		while (!(file.peek() == std::char_traits<char>::eof()))
+		{
+			for(size_t i = 0; i < rowsOnPage; ++i)
+			{
+				if(!(file.peek() == std::char_traits<char>::eof()))
+				{
+					std::getline(file, curr);
+					std::cout<<curr<<std::endl;
+					file<<std::endl;
+				}
+				else
+				{
+					break;
+				}
+				std::cout<<"Type 6 to exit book and anything else to continue.";
+				std::cin>>cont;
+				if(cont == "6")
+				{
+					break; 
+				}
+			}
+			if(cont == "6")
+			{
+				break; 
+			}
+		}
+	}
+}
+
+

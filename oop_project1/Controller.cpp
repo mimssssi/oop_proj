@@ -19,6 +19,7 @@ void Controller::run()
             "1 - Sorted List;\n2 - Search;\n3 - Add a Book;\n4 - Remove a Book;\n"<<
             "5 - Print a Book;\n6 - Exit.\n";
         marker = userInput();
+        int index;
     
         switch (marker)
         {
@@ -26,7 +27,7 @@ void Controller::run()
             sort();
             break;
         case 2:
-            int index = search();
+            index = search();
             if(index != -1)
             {
                 lib.printBookInfo(index, true);
@@ -49,7 +50,7 @@ void Controller::run()
             }
             break;
         case 5:
-            /* code */
+            /* code TRY CATCH*/
             break;
         
         default:

@@ -21,6 +21,10 @@ TEST_CASE( "Library", "[Library]" )
         REQUIRE(lib.search(author, "2Ivan") != -1);
         REQUIRE(lib.search(author, "2Ivan") == lib.search(author, "2iVan"));
     }
+    SECTION("print book")
+    {
+        lib.printBook(0, 2);
+    }
     SECTION("remove")
     {
         REQUIRE_THROWS_AS(lib.removeBook(1, true), std::runtime_error);

@@ -38,6 +38,8 @@ public:
     int search(crit by, std::string key);
     ///prints book info
     void printBookInfo(size_t pos, bool detailed);
+    ///Prints the book page by page, if rowsOnPage > 0; by sentences if rowsOnPage = 0
+    void printBook(size_t pos, unsigned rowsOnPage);
 
     void removeBook(size_t pos, bool rmFile);
 };
