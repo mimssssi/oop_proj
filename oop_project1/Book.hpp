@@ -20,6 +20,4 @@ struct Book
 // public:
     Book(std::string author, std::string title, std::string path, std::string description, 
     unsigned rating, std::string ISBN);
-    Book(const Book& other) = delete;
-    void operator=(const Book& other) = delete;
 };

@@ -2,7 +2,11 @@
 
 #include <fstream>
 #include <vector>
+#include <algorithm>
 #include "Book.hpp"
+
+///Used to denote the desired sorting criterion
+enum sortingCrit{author, title, rating};
 
 //< Keeps books in a vector and keeps the database up to date
 class Library
@@ -14,6 +18,8 @@ private:
     std::string filePath;
 
     std::vector<Book> lib;
+    void writeToFile();
+    void printVector(bool ascending);
 
 public:
 
@@ -22,9 +28,9 @@ public:
    
     Library(std::string filePath);
     
-    // void read();    ///reads book info from the database
     void save(Book book);    ///saves book info to the vector and updates the file
-    void writeToFile();
+    //sorts the vector, containing the books, by the chosen criteria.
+    void sort(sortingCrit by, bool ascending);
 };
 
 //std::sort sorts the array using ...

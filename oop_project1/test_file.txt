@@ -1,0 +1,12 @@
+"kniga" by 1Pesho.
+ISBN: 3849938; Rating: 10; Filepath: file.txt;
+Description: Pyrvata kniga na Pesho
+
+"Ivan" by 2Ivan.
+ISBN: 38499s38; Rating: 10; Filepath: file2.txt;
+Description: Pyrvata kniga na Ivan
+
+"ne" by 3ne.
+ISBN: 38499se38; Rating: 10; Filepath: file2.txt;
+Description: Pyrvata kniga na ne
+
