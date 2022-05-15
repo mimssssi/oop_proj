@@ -30,9 +30,31 @@ void Library::writeToFile()
 void Library::sort(sortingCrit by, bool ascending)
 {
 	///sorts the vector in ascending order by author
-	std::sort(lib.begin(), lib.end(), [](Book a, Book b) {
-        return a.author[0] < b.author[0];
-    });
+	
+
+	switch(by)
+	{
+	case author:
+		std::sort(lib.begin(), lib.end(), [](Book one, Book two) {
+        return one.author.at(0) < two.author.at(0);
+		});	///sorts the vector in ascending order
+		break;
+	
+	case title:
+		std::sort(lib.begin(), lib.end(), [](Book one, Book two) {
+        return one.title.at(0) < two.title.at(0);
+		});	///sorts the vector in ascending order
+		break;
+
+	case rating:
+		std::sort(lib.begin(), lib.end(), [](Book one, Book two) {
+        return one.rating < two.rating;
+		});	///sorts the vector in ascending order
+		break;
+	
+	default:
+		break;
+	}
 
 	printVector(ascending);
 }
