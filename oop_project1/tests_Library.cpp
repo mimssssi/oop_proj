@@ -21,4 +21,14 @@ TEST_CASE( "Add books to library", "[Library]" )
         REQUIRE(lib.search(author, "2Ivan") != -1);
         REQUIRE(lib.search(author, "2Ivan") == lib.search(author, "2iVan"));
     }
+    SECTION("remove")
+    {
+        REQUIRE_THROWS_AS(lib.removeBook(1, true), std::runtime_error);
+        lib.removeBook(1, false);
+        REQUIRE(lib.size() == 2);
+        std::fstream file;
+        file.open("file.txt", std::ios::out);
+        file.close();
+        lib.removeBook(0, true);
+    }
 }

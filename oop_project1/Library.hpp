@@ -28,7 +28,9 @@ public:
     void operator=(const Library& other) = delete;
    
     Library(std::string filePath);
-    
+
+    ///returns how many books are currently stored. Used for unit tests
+    size_t size();
     ///saves book info to the vector and updates the file
     void save(Book book);    
     ///sorts the vector, containing the books, by the chosen criteria.
@@ -37,6 +39,8 @@ public:
     int search(crit by, std::string key);
     ///prints book info
     void printBookInfo(size_t pos, bool detailed);
+
+    void removeBook(size_t pos, bool rmFile);
 };
 
 // std::sort sorts the array using ... 

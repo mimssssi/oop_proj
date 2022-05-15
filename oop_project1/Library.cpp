@@ -28,10 +28,7 @@ void Library::writeToFile()
 }
 
 void Library::sort(crit by, bool ascending)
-{
-	///sorts the vector in ascending order by author
-	
-
+{	
 	switch(by)
 	{
 	case author:
@@ -136,4 +133,24 @@ std::string Library::lower(std::string str)
 		lc.push_back(tolower(str.c_str()[i])); ///this should not get out of bounds
 	}
 	return lc;
+}
+
+void Library::removeBook(size_t pos, bool rmFile)
+{
+	if(rmFile)
+	{
+		int rm = remove(lib.at(pos).path.c_str());
+		if(rm)
+		{
+			throw std::runtime_error ("Unable to delete this file.");
+		}
+	}
+
+	lib.erase(lib.begin() + pos);
+	writeToFile();
+}
+
+size_t Library::size()
+{
+	return lib.size();
 }
