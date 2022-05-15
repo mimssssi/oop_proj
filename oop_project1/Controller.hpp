@@ -10,6 +10,8 @@ private:
     Library lib;
 
     Controller();
+    bool authorised();
+
 
 public:
 
@@ -23,6 +25,12 @@ public:
     unsigned userInput();
     ///interactive
     void sort();
+    ///interactive. Returns the index of a book, which matches the search; -1 if not found
+    int search();
+    ///interactive
     void addBook();
+    ///interactive
+    void removeBook();
+
 };
 

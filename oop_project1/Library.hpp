@@ -6,7 +6,7 @@
 #include "Book.hpp"
 
 ///Used to denote the desired sorting or search criterion
-enum crit{author, title, rating, ISBN};
+enum crit{author, title, rating, ISBN, description};
 
 //< Keeps books in a vector and keeps the database up to date
 class Library

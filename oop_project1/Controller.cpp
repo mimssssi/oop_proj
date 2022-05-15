@@ -26,13 +26,27 @@ void Controller::run()
             sort();
             break;
         case 2:
-            /* code */
+            int index = search();
+            if(index != -1)
+            {
+                lib.printBookInfo(index, true);
+            }
+            else
+            {
+                std::cout<<"There is no book which matches your search in our database.";
+            }
             break;
         case 3:
-            addBook();
+            if(authorised())
+            {
+                addBook();
+            }
             break;
         case 4:
-            /* code */
+            if(authorised())
+            {
+                removeBook();
+            }
             break;
         case 5:
             /* code */
@@ -41,7 +55,7 @@ void Controller::run()
         default:
             break;
         }
-        std::cout<<"Type anything to continue.";
+        std::cout<<"Type 6 to exit and anything else to continue.";
         marker = userInput();
     }
 }
@@ -103,4 +117,65 @@ void Controller::addBook()
 
     lib.save(temp);
 }
+
+bool Controller::authorised()
+{
+    std::string input;
+    std::cout<<"Password: ";
+    std::cin>>input;
+    return input == passwd;
+}
+
+int Controller::search()
+{
+    std::cout<<"What would you like to search by:\n1 - Author;\n2 - Title;\n3 - ISBN;\n4 - Description.\n";
+    unsigned crit = userInput();
+    std::string key;
+    std::cin>>key;
+    int index = -1;
+    switch (crit)
+    {
+    case 1:
+        index = lib.search(author, key);
+        break;
+    case 2:
+        index = lib.search(title, key);
+        break;
+    case 3:
+        index = lib.search(ISBN, key);
+        break;
+    case 4:
+        // index = lib.search(description, key);
+        break;
+    
+    default:
+        break;
+    }
+    return index;
+}
+
+void Controller::removeBook()
+{
+    int index = search();
+    if(index != -1)
+    {
+        std::cout<<"Would you like to delete the file, containing this book:\n1 - Yes;\n2 - No.\n";
+        unsigned del = userInput();
+        switch (del)
+        {
+        case 1:
+            lib.removeBook(index, true);
+            break;
+        
+        default:
+            lib.removeBook(index, false);
+            break;
+        }
+    }
+    else
+    {
+        std::cout<<"There is no book which matches your search in our database.";
+    }
+}
+
 
