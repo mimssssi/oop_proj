@@ -88,7 +88,7 @@ void Library::printBookInfo(size_t pos, bool detailed)
 	}
 }
 
-void Library::search(crit by, std::string key)
+int Library::search(crit by, std::string key)
 {
 	switch (by)
 	{
@@ -97,7 +97,7 @@ void Library::search(crit by, std::string key)
 		{
 			if(lower(lib.at(i).author) == lower(key))
 			{
-				printBookInfo(i, true);
+				return i;
 			}
 		}
 		break;
@@ -106,7 +106,7 @@ void Library::search(crit by, std::string key)
 		{
 			if(lower(lib.at(i).title) == lower(key))
 			{
-				printBookInfo(i, true);
+				return i;
 			}
 		}
 		break;
@@ -115,14 +115,17 @@ void Library::search(crit by, std::string key)
 		{
 			if(lower(lib.at(i).ISBN) == lower(key))
 			{
-				printBookInfo(i, true);
+				// printBookInfo(i, true);
+				return i;
 			}
 		}
 		break;
 	
 	default:
+		return -1;
 		break;
 	}
+	return -1;
 }
 
 std::string Library::lower(std::string str)

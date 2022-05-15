@@ -20,7 +20,6 @@ private:
     std::vector<Book> lib;
     void writeToFile();
     void printVector(bool ascending);
-    void printBookInfo(size_t pos, bool detailed);
     std::string lower(std::string str);
 
 public:
@@ -32,10 +31,12 @@ public:
     
     ///saves book info to the vector and updates the file
     void save(Book book);    
-    //sorts the vector, containing the books, by the chosen criteria.
+    ///sorts the vector, containing the books, by the chosen criteria.
     void sort(crit by, bool ascending);
-
-    void search(crit by, std::string key);
+    ///returns the index of the first matching book found, -1 if not found
+    int search(crit by, std::string key);
+    ///prints book info
+    void printBookInfo(size_t pos, bool detailed);
 };
 
 // std::sort sorts the array using ... 

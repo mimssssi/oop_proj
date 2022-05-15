@@ -12,19 +12,13 @@ TEST_CASE( "Add books to library", "[Library]" )
     lib.save(sec);
     lib.save(three);
 
-    // SECTION("sort")
-    // {
-        // lib.sort(rating, false);
-        // lib.sort(author, false);
-        // lib.sort(title, true);
-        // REQUIRE()
-    // }
+    // lib.sort(rating, false);
+    // lib.sort(author, false);
+    // lib.sort(title, true);
+        
     SECTION("search")
     {
-        lib.search(author, "2Ivan");
-        lib.search(author, "2iVan");
-        // lib.sort(author, false);
-        // lib.sort(title, true);
-        // REQUIRE()
+        REQUIRE(lib.search(author, "2Ivan") != -1);
+        REQUIRE(lib.search(author, "2Ivan") == lib.search(author, "2iVan"));
     }
 }
