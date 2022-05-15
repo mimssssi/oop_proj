@@ -21,6 +21,7 @@ private:
     void writeToFile();
     void printVector(bool ascending);
     void printBookInfo(size_t pos, bool detailed);
+    std::string lower(std::string str);
 
 public:
 

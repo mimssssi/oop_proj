@@ -95,7 +95,7 @@ void Library::search(crit by, std::string key)
 	case author:
 		for(size_t i = 0; i < lib.size(); ++i)
 		{
-			if(lib.at(i).author == key)
+			if(lower(lib.at(i).author) == lower(key))
 			{
 				printBookInfo(i, true);
 			}
@@ -104,7 +104,7 @@ void Library::search(crit by, std::string key)
 	case title:
 		for(size_t i = 0; i < lib.size(); ++i)
 		{
-			if(lib.at(i).title == key)
+			if(lower(lib.at(i).title) == lower(key))
 			{
 				printBookInfo(i, true);
 			}
@@ -113,7 +113,7 @@ void Library::search(crit by, std::string key)
 	case ISBN:
 		for(size_t i = 0; i < lib.size(); ++i)
 		{
-			if(lib.at(i).ISBN == key)
+			if(lower(lib.at(i).ISBN) == lower(key))
 			{
 				printBookInfo(i, true);
 			}
@@ -123,4 +123,14 @@ void Library::search(crit by, std::string key)
 	default:
 		break;
 	}
+}
+
+std::string Library::lower(std::string str)
+{
+	std::string lc;
+	for(size_t i = 0; i < str.size(); ++i)
+	{
+		lc.push_back(tolower(str.c_str()[i])); ///this should not get out of bounds
+	}
+	return lc;
 }

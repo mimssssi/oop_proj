@@ -22,6 +22,7 @@ TEST_CASE( "Add books to library", "[Library]" )
     SECTION("search")
     {
         lib.search(author, "2Ivan");
+        lib.search(author, "2iVan");
         // lib.sort(author, false);
         // lib.sort(title, true);
         // REQUIRE()
