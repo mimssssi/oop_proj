@@ -6,8 +6,8 @@
 
 struct Book
 {
-    static unsigned gen;
-    unsigned libID;
+    // static unsigned gen;
+    // unsigned libID;
 
     std::string author;
     std::string title;
