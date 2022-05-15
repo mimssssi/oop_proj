@@ -120,6 +120,16 @@ int Library::search(crit by, std::string key)
 			}
 		}
 		break;
+	case description:
+	std::cout<<"AA"<<isSubstring(lower(lib.at(0).description), "nani");
+		for(size_t i = 0; i < lib.size(); ++i)
+		{
+			if(isSubstring(lower(lib.at(i).description), lower(key)) != -1)
+			{
+				return i;
+			}
+		}
+		break;
 	
 	default:
 		return -1;
@@ -169,8 +179,8 @@ void Library::printBook(size_t pos, unsigned rowsOnPage)
 	if(rowsOnPage)
 	{
 		std::string cont;
-		while (!(file.peek() == std::char_traits<char>::eof()))
-		{
+		// while (!(file.peek() == std::char_traits<char>::eof()))
+		// {
 			for(size_t i = 0; i < rowsOnPage; ++i)
 			{
 				if(!(file.peek() == std::char_traits<char>::eof()))
@@ -183,6 +193,12 @@ void Library::printBook(size_t pos, unsigned rowsOnPage)
 				{
 					break;
 				}
+				// while(!file.eof()) 
+				// {
+				// 	std::getline(file, curr);
+				// 	std::cout<<curr<<std::endl;
+				// 	file<<std::endl;
+				// }
 				std::cout<<"Type 6 to exit book and anything else to continue.";
 				std::cin>>cont;
 				if(cont == "6")
@@ -190,12 +206,32 @@ void Library::printBook(size_t pos, unsigned rowsOnPage)
 					break; 
 				}
 			}
-			if(cont == "6")
-			{
-				break; 
-			}
-		}
+			// if(cont == "6")
+			// {
+			// 	break; 
+			// }
+		// }
 	}
 }
 
+int Library::isSubstring(std::string desc, std::string key)
+{
+	int M = desc.length();
+    int N = key.length();
+ 
+    /* A loop to slide pat[] one by one */
+    for (size_t i = 0; i <= N - M; i++) {
+		size_t j;
+        /* For current index i, check for
+ pattern match */
+        for (j = 0; j < M; j++)
+            if (key.at(i + j) != desc.at(j))
+                break;
+ 
+        if (j == M)
+            return i;
+    }
+ 
+    return -1;
+}
 

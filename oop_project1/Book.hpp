@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-
+///Type used to describe the real-life object "book"
 struct Book
 {
     // static unsigned gen;

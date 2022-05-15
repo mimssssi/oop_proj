@@ -1,0 +1,69 @@
+\hypertarget{classLibrary}{}\doxysection{Library Class Reference}
+\label{classLibrary}\index{Library@{Library}}
+
+
+Keeps books in a vector and keeps the database up to date.  
+
+
+
+
+{\ttfamily \#include $<$Library.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLibrary_a8961d0fa237f940e6e24839fdae5a829}\label{classLibrary_a8961d0fa237f940e6e24839fdae5a829}} 
+{\bfseries Library} (const \mbox{\hyperlink{classLibrary}{Library}} \&other)=delete
+\item 
+\mbox{\Hypertarget{classLibrary_a7a285600fd37b13cc1110b42f786f851}\label{classLibrary_a7a285600fd37b13cc1110b42f786f851}} 
+void {\bfseries operator=} (const \mbox{\hyperlink{classLibrary}{Library}} \&other)=delete
+\item 
+\mbox{\Hypertarget{classLibrary_a93f57e76efeb75a2b076fa403841ce9f}\label{classLibrary_a93f57e76efeb75a2b076fa403841ce9f}} 
+{\bfseries Library} (std\+::string file\+Path)
+\item 
+\mbox{\Hypertarget{classLibrary_a6ecd062711ecb6a4eb4d8fd56bb96b47}\label{classLibrary_a6ecd062711ecb6a4eb4d8fd56bb96b47}} 
+size\+\_\+t \mbox{\hyperlink{classLibrary_a6ecd062711ecb6a4eb4d8fd56bb96b47}{size}} ()
+\begin{DoxyCompactList}\small\item\em returns how many books are currently stored. Used for unit tests \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLibrary_afbf2410eb3cabb2c1361900711752c0f}\label{classLibrary_afbf2410eb3cabb2c1361900711752c0f}} 
+void \mbox{\hyperlink{classLibrary_afbf2410eb3cabb2c1361900711752c0f}{save}} (\mbox{\hyperlink{structBook}{Book}} book)
+\begin{DoxyCompactList}\small\item\em saves book info to the vector and updates the file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLibrary_aeeeeece0e0c2b7deb3e2ad847d6a22ba}{sort}} (crit by, bool ascending)
+\begin{DoxyCompactList}\small\item\em sorts the vector, containing the books, by the chosen criteria. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLibrary_a0ccab33360c24884fd2bec8c1c1627b1}\label{classLibrary_a0ccab33360c24884fd2bec8c1c1627b1}} 
+int \mbox{\hyperlink{classLibrary_a0ccab33360c24884fd2bec8c1c1627b1}{search}} (crit by, std\+::string key)
+\begin{DoxyCompactList}\small\item\em returns the index of the first matching book found, -\/1 if not found \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLibrary_aa8b3c3cae23564996f6d03d008b49803}\label{classLibrary_aa8b3c3cae23564996f6d03d008b49803}} 
+void \mbox{\hyperlink{classLibrary_aa8b3c3cae23564996f6d03d008b49803}{print\+Book\+Info}} (size\+\_\+t pos, bool detailed)
+\begin{DoxyCompactList}\small\item\em prints book info \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLibrary_a7d06c125bda3d08a6670d9de505af9e5}\label{classLibrary_a7d06c125bda3d08a6670d9de505af9e5}} 
+void \mbox{\hyperlink{classLibrary_a7d06c125bda3d08a6670d9de505af9e5}{print\+Book}} (size\+\_\+t pos, unsigned rows\+On\+Page)
+\begin{DoxyCompactList}\small\item\em @rows\+On\+Page $>$ 0 -\/ Prints the book page by page; else prints by sentences \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLibrary_a9106d92df18ed3ac05e7dfcc4ec36db1}\label{classLibrary_a9106d92df18ed3ac05e7dfcc4ec36db1}} 
+void \mbox{\hyperlink{classLibrary_a9106d92df18ed3ac05e7dfcc4ec36db1}{remove\+Book}} (size\+\_\+t pos, bool rm\+File)
+\begin{DoxyCompactList}\small\item\em @pos -\/ index of the book to be removed in the vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Keeps books in a vector and keeps the database up to date. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLibrary_aeeeeece0e0c2b7deb3e2ad847d6a22ba}\label{classLibrary_aeeeeece0e0c2b7deb3e2ad847d6a22ba}} 
+\index{Library@{Library}!sort@{sort}}
+\index{sort@{sort}!Library@{Library}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily void Library\+::sort (\begin{DoxyParamCaption}\item[{crit}]{by,  }\item[{bool}]{ascending }\end{DoxyParamCaption})}
+
+
+
+sorts the vector, containing the books, by the chosen criteria. 
+
+sorts the vector in ascending order
+
+sorts the vector in ascending order
+
+sorts the vector in ascending order
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Library.\+hpp\item 
+Library.\+cpp\end{DoxyCompactItemize}

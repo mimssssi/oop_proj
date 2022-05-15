@@ -33,7 +33,7 @@ TEST_CASE( "Library", "[Library]" )
         std::fstream file;
         file.open("file.txt", std::ios::out);
         file.close();
-        lib.removeBook(0, true);
+        // lib.removeBook(0, true);
     }
 }
 

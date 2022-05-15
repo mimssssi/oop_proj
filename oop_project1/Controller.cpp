@@ -27,7 +27,15 @@ void Controller::run()
             sort();
             break;
         case 2:
-            index = search();
+            try
+            {
+                index = search();
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << '\n';
+            }
+
             if(index != -1)
             {
                 lib.printBookInfo(index, true);
@@ -50,7 +58,23 @@ void Controller::run()
             }
             break;
         case 5:
-            /* code TRY CATCH*/
+            try
+            {
+                try
+                {
+                    index = search();
+                }
+                catch(const std::exception& e)
+                {
+                    std::cerr << e.what() << '\n';
+                }
+            lib.printBook(index, userInput());
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << e.what() << '\n';
+            }
+            
             break;
         
         default:
@@ -146,7 +170,7 @@ int Controller::search()
         index = lib.search(ISBN, key);
         break;
     case 4:
-        // index = lib.search(description, key);
+        index = lib.search(description, key);
         break;
     
     default:
@@ -157,7 +181,15 @@ int Controller::search()
 
 void Controller::removeBook()
 {
-    int index = search();
+    int index;
+    try
+    {
+        index = search();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     if(index != -1)
     {
         std::cout<<"Would you like to delete the file, containing this book:\n1 - Yes;\n2 - No.\n";
