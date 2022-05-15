@@ -92,7 +92,7 @@ void Library::search(crit by, std::string key)
 {
 	switch (by)
 	{
-	std::cout<<lib.size();
+	case author:
 		for(size_t i = 0; i < lib.size(); ++i)
 		{
 			if(lib.at(i).author == key)
