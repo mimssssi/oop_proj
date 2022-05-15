@@ -9,3 +9,5 @@ Book::Book(std::string author, std::string title, std::string path, std::string 
     //    libID = gen++;
    }
 
+Book::Book()
+{}

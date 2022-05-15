@@ -12,9 +12,10 @@ enum crit{author, title, rating, ISBN};
 class Library
 {
 private:
-    std::string filePath;
+    std::string filePath = "data.txt";
 
     std::vector<Book> lib;
+
     void writeToFile();
     void printVector(bool ascending);
     std::string lower(std::string str);
@@ -24,6 +25,7 @@ public:
     Library(const Library& other) = delete;
     void operator=(const Library& other) = delete;
    
+    Library();
     Library(std::string filePath);
 
     ///returns how many books are currently stored. Used for unit tests

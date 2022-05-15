@@ -4,6 +4,9 @@
 Library::Library(std::string file_path) : filePath(file_path)
 {}
 
+Library::Library()
+{}
+
 void Library::save(Book book)
 {
     lib.push_back(book);
