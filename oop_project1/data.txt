@@ -1,4 +1,0 @@
-"s" by s.
-ISBN: s; Rating: 0; Filepath: d;
-Description: banani
-

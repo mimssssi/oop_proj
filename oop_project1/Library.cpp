@@ -152,11 +152,16 @@ void Library::removeBook(size_t pos, bool rmFile)
 {
 	if(rmFile)
 	{
-		int rm = remove(lib.at(pos).path.c_str());
-		if(rm)
-		{
-			throw std::runtime_error ("Unable to delete this file.");
-		}
+		std::fstream book;
+		book.open (lib.at(pos).path.c_str(), std::fstream::out | std::fstream::trunc);
+		// if(rm)
+		// {
+		// 	throw std::runtime_error ("Unable to delete this file.");
+		// }
+		// std::cout<<lib.at(pos).path.c_str();
+		// int rm = remove(lib.at(pos).path.c_str());
+		book.close();
+		
 	}
 
 	lib.erase(lib.begin() + pos);
